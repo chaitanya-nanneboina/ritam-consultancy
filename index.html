@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritam Consultancy — Trusted Guidance for B.Tech Admission</title>
+  <meta name="description" content="Get expert guidance, compare top engineering colleges, and choose the right B.Tech college across India based on your budget, preferences, and career goals." />
+  
+  <!-- Plus Jakarta Sans Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==================================================
+       Brand Design Tokens
+       ================================================== */
+    :root {
+      --primary: #044439;
+      --primary-dark: #022a23;
+      --primary-light: #075f4f;
+      --primary-surface: #E8F5F1;
+      --primary-border: #9FD3C7;
+
+      --accent: #F96815;
+      --accent-hover: #e05609;
+      --accent-surface: #FFF3EB;
+      --accent-border: #FFD0B5;
+
+      --whatsapp: #25D366;
+      --whatsapp-hover: #20ba5a;
+
+      --text-title: #111827;
+      --text-body: #4B5563;
+      --text-muted: #6B7280;
+
+      --bg-white: #FFFFFF;
+      /* Noticeably stronger, rich section shades for strong visual contrast */
+      --bg-why-section: #EBF4F0;     /* Rich Mint Green Tint */
+      --border-why-section: #CFE3DB;
+
+      --bg-zero-section: #FAF0E6;    /* Rich Warm Sand/Peach Tint */
+      --border-zero-section: #F2DFD0;
+
+      --bg-enquiry-section: #E5EFEB; /* Rich Sage Gradient Tint */
+      --border-enquiry-section: #C7DBD2;
+
+      --border-color: #EAECF0;
+      --font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: var(--font-family);
+      scroll-behavior: smooth;
+      color: var(--text-title);
+      background-color: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, input, select {
+      font-family: inherit;
+    }
+
+    /* Container Utility */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==================================================
+       Animations & Keyframes
+       ================================================== */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @keyframes pulseGlowBig {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.22s; }
+    .delay-3 { transition-delay: 0.32s; }
+
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(4, 68, 57, 0.08);
+      border-color: var(--primary-border);
+    }
+
+    /* Dribbble Decorative Underline SVG */
+    .dribbble-curl {
+      position: relative;
+      display: inline-block;
+    }
+    .dribbble-curl svg {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      pointer-events: none;
+    }
+
+    /* ==================================================
+       Header & Navigation (Logo size increased prominently)
+       ================================================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #F1F3F5;
+      padding: 16px 0;
+    }
+    header.scrolled {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+      border-bottom-color: #E2E8F0;
+      padding: 12px 0;
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Logo increased still bigger as requested */
+    .logo-img {
+      height: 64px; /* Prominent, bold brand logo */
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+    .capsule-menu {
+      display: flex;
+      align-items: center;
+      background: #F3F5F7;
+      padding: 6px;
+      border-radius: 9999px;
+      gap: 4px;
+      border: 1px solid #E5E7EB;
+    }
+    .capsule-item {
+      padding: 9px 20px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-body);
+      transition: all 0.2s ease;
+    }
+    .capsule-item:hover {
+      color: var(--primary);
+      background: rgba(255, 255, 255, 0.7);
+    }
+    .capsule-item.active {
+      background: #FFFFFF;
+      color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cta-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 12px 26px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(4, 68, 57, 0.24);
+      transition: all 0.25s ease;
+    }
+    .cta-btn-nav:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(4, 68, 57, 0.32);
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 4px;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 0 10px;
+      border-top: 1px solid #F3F4F6;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu a {
+      font-size: 15px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    /* ==================================================
+       01. Hero Section (With Precise Background Shapes & Spacing)
+       ================================================== */
+    .hero-section {
+      padding: 65px 0 95px; /* Clean breathing room at top */
+      position: relative;
+      background: #FFFFFF;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.15fr) minmax(320px, 0.95fr);
+      gap: 48px;
+      align-items: center;
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-surface);
+      border: 1px solid var(--primary-border);
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(4, 68, 57, 0.06);
+    }
+    .hero-title {
+      font-size: clamp(36px, 4.8vw, 58px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-title);
+      letter-spacing: -1.6px;
+      margin: 18px 0;
+    }
+    .highlight-orange {
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-body);
+      max-width: 530px;
+      margin-bottom: 28px;
+    }
+    .bullet-badges-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+      gap: 14px 20px;
+      margin-bottom: 34px;
+    }
+    .bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      background: #F9FAFB;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid #EAECF0;
+    }
+    .check-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--primary-surface);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 15px 32px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 10px 24px rgba(4, 68, 57, 0.25);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(4, 68, 57, 0.32);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      color: #1F2937;
+      border: 1.5px solid #D1D5DB;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Visual Container Matching Uploaded Figma Image Exactly */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    /* Precise Layered Organic Shapes Behind Students */
+    .shapes-backdrop-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Top-Right Floating Trophy Card Matching Image Exactly */
+    .floating-hero-badge {
+      position: absolute;
+      top: 15px;
+      right: 5px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(234, 236, 240, 0.9);
+      border-radius: 18px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      z-index: 5;
+      animation: floatGentle 4.5s ease-in-out infinite;
+    }
+    .trophy-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #FEF3C7; /* Pale gold square from image */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .badge-content-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+    .badge-heading {
+      font-size: 13px;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.2px;
+    }
+    .badge-subtext {
+      font-size: 11px;
+      color: #6B7280;
+      font-weight: 500;
+    }
+
+    /* Floating Rating Badge Bottom Left */
+    .floating-stat-tag {
+      position: absolute;
+      bottom: 30px;
+      left: -15px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border: 1px solid #EAECF0;
+      border-radius: 14px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+      z-index: 5;
+    }
+
+    .students-photo {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    /* ==================================================
+       02. Why Choose Us (Noticeably Stronger Mint Background #EBF4F0)
+       ================================================== */
+    .why-section {
+      padding: 90px 0 100px;
+      background: var(--bg-why-section); /* Stronger noticeable mint tint */
+      border-top: 1.5px solid var(--border-why-section);
+      border-bottom: 1.5px solid var(--border-why-section);
+      position: relative;
+    }
+    .section-header {
+      max-width: 680px;
+      margin: 0 auto 52px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 3.8vw, 42px);
+      font-weight: 800;
+      color: var(--text-title);
+      letter-spacing: -0.9px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .cards-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      text-align: left;
+    }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1.5px solid #D5E5DF; /* Crisp contrasting card border */
+      border-radius: 18px;
+      padding: 34px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: 0 6px 18px rgba(4, 68, 57, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+    .feature-card:hover::before {
+      background: var(--primary);
+    }
+    .card-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .bg-teal { background: #E8F5F1; color: var(--primary); }
+    .bg-peach { background: #FEF0E6; color: var(--accent); }
+    .bg-mint { background: #E6F8F3; color: var(--primary); }
+    .bg-orange { background: #FFF4ED; color: var(--accent); }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-title);
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==================================================
+       03. Explore Colleges (Clean Pure White Background)
+       ================================================== */
+    .explore-section {
+      padding: 95px 0 105px;
+      background: #FFFFFF;
+      position: relative;
+    }
+    .explore-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.85fr) minmax(340px, 1.25fr);
+      gap: 56px;
+      align-items: center;
+    }
+    .explore-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+    }
+    .campus-sketch {
+      margin-top: 26px;
+      opacity: 0.8;
+      border-top: 1px dashed #E5E7EB;
+      padding-top: 24px;
+      width: 100%;
+    }
+    .region-cards-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .region-card-wide {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 120px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .wide-img-wrap {
+      width: 190px;
+      height: 100%;
+      min-height: 120px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .region-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+    }
+    .region-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      flex: 1;
+    }
+    .region-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .region-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-title);
+      letter-spacing: -0.3px;
+    }
+    .region-subtag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .region-arrow {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary-surface);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+      border: 1px solid var(--primary-border);
+    }
+
+    /* Hover animation for Region Cards */
+    .region-card-wide:hover, .region-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(4, 68, 57, 0.12);
+    }
+    .region-card-wide:hover .region-img, .region-card:hover .region-img {
+      transform: scale(1.12);
+      filter: contrast(1.05);
+    }
+    .region-card-wide:hover .region-arrow, .region-card:hover .region-arrow {
+      background: var(--primary);
+      color: #FFFFFF;
+      transform: rotate(-45deg) scale(1.12);
+      box-shadow: 0 4px 12px rgba(4, 68, 57, 0.3);
+    }
+
+    .region-grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .region-card {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 104px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .thumb-wrap {
+      width: 120px;
+      height: 100%;
+      min-height: 104px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    /* ==================================================
+       04. Zero Commission Section (Stronger Warm Background #FAF0E6)
+       ================================================== */
+    .zero-comm-section {
+      padding: 90px 0;
+      background: var(--bg-zero-section); /* Noticeable rich warm peach tint */
+      border-top: 1.5px solid var(--border-zero-section);
+      border-bottom: 1.5px solid var(--border-zero-section);
+    }
+    .zero-comm-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.2fr);
+      gap: 50px;
+      align-items: center;
+    }
+    .shield-img {
+      max-width: 310px;
+      margin: 0 auto;
+      filter: drop-shadow(0 16px 32px rgba(4, 68, 57, 0.22));
+      animation: floatGentle 5s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+    .shield-img:hover {
+      transform: scale(1.04);
+    }
+    .trust-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1.5px solid #ECD7C6;
+      padding: 12px 22px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ==================================================
+       05. Guidance for Parents & Students (Clean Pure White)
+       ================================================== */
+    .guidance-section {
+      padding: 95px 0;
+      background: #FFFFFF;
+    }
+    .guidance-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.95fr) minmax(320px, 1.15fr);
+      gap: 56px;
+      align-items: flex-start;
+    }
+    .guidance-photo-card {
+      position: relative;
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      margin-top: 12px;
+      border: 1px solid var(--border-color);
+    }
+    .guidance-photo {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .guidance-photo-card:hover .guidance-photo {
+      transform: scale(1.03);
+    }
+    .photo-tags {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .photo-tag {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    .steps-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+    }
+    /* Dribbble Connected Timeline Track Line */
+    .steps-timeline::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      bottom: 30px;
+      left: 21px;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, #A3D8CD 0, #A3D8CD 6px, transparent 6px, transparent 12px);
+      z-index: 1;
+    }
+    .timeline-step {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+      z-index: 2;
+    }
+    .step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 2.5px solid var(--primary);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(4, 68, 57, 0.15);
+      transition: all 0.3s ease;
+    }
+    .timeline-step:hover .step-badge {
+      background: var(--primary);
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px 22px;
+      flex: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+    }
+    .timeline-step:hover .step-card {
+      border-color: var(--primary-border);
+      transform: translateX(4px);
+      box-shadow: 0 6px 18px rgba(4, 68, 57, 0.07);
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-title);
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .guidance-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      padding-left: 6px;
+    }
+
+    /* ==================================================
+       06. Enquiry Form Section (Noticeably Stronger Sage Tint #E5EFEB)
+       ================================================== */
+    .enquiry-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, #EDF5F1 0%, #DFECE7 100%);
+      border-top: 1.5px solid var(--border-enquiry-section);
+    }
+    .enquiry-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.15fr) minmax(300px, 0.95fr);
+      gap: 56px;
+      align-items: center;
+    }
+    .form-card {
+      background: #FFFFFF;
+      border-radius: 26px;
+      padding: 38px;
+      box-shadow: 0 24px 50px -15px rgba(4, 68, 57, 0.16);
+      border: 1.5px solid #D5E4DC;
+      max-width: 530px;
+      margin: 0 auto;
+    }
+    .form-header-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .form-icon-pill {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 22px;
+    }
+    .form-card-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--text-title);
+      margin-bottom: 4px;
+    }
+    .form-card-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .enquiry-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+    }
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      color: var(--text-muted);
+      font-size: 14px;
+      pointer-events: none;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      border-radius: 12px;
+      border: 1.5px solid #D1D5DB;
+      font-size: 14px;
+      color: var(--text-title);
+      background: #FCFCFD;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .form-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(4, 68, 57, 0.12);
+      background: #FFFFFF;
+    }
+    .form-input.error {
+      border-color: #EF4444;
+      background: #FFF5F5;
+    }
+    .error-msg {
+      font-size: 12px;
+      color: #EF4444;
+      font-weight: 500;
+      display: none;
+    }
+    .error-msg.visible {
+      display: block;
+    }
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .btn-submit {
+      width: 100%;
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 9999px;
+      padding: 15px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(4, 68, 57, 0.24);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      margin-top: 4px;
+    }
+    .btn-submit:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(4, 68, 57, 0.32);
+    }
+    .privacy-notice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 4px;
+    }
+    .success-alert {
+      display: none;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+      color: #065F46;
+      font-size: 13px;
+    }
+    .success-alert.show {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    /* ==================================================
+       07. Footer (Logo size increased)
+       ================================================== */
+    footer {
+      background: #FFFFFF;
+      border-top: 1.5px solid var(--border-color);
+      padding: 55px 0 30px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding-bottom: 32px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo-img {
+      height: 52px; /* Increased footer logo */
+      width: auto;
+      object-fit: contain;
+    }
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--text-body);
+      max-width: 320px;
+      border-left: 1.5px solid #E5E7EB;
+      padding-left: 16px;
+      line-height: 1.5;
+    }
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      transition: color 0.2s ease;
+    }
+    .contact-link:hover {
+      color: var(--primary);
+    }
+    .footer-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin-bottom: 24px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* ==================================================
+       FLOATING WHATSAPP BUTTON (BOTTOM-RIGHT & BIGGER AS REQUESTED)
+       ================================================== */
+    .whatsapp-floating {
+      position: fixed;
+      bottom: 28px;
+      right: 28px; /* MOVED TO BOTTOM-RIGHT */
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFFFF;
+      padding: 8px 20px 8px 8px; /* Slightly bigger */
+      border-radius: 9999px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+      border: 1.5px solid rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .whatsapp-floating:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.35);
+    }
+    .whatsapp-icon-circle {
+      width: 52px; /* Bigger WhatsApp button */
+      height: 52px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      animation: pulseGlowBig 2.5s infinite;
+      flex-shrink: 0;
+    }
+    .whatsapp-text-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .whatsapp-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .online-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      display: inline-block;
+    }
+    .whatsapp-sub {
+      font-size: 12px;
+      color: #059669;
+      font-weight: 700;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 900px) {
+      .hero-grid, .explore-grid, .zero-comm-grid, .guidance-grid, .enquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .capsule-menu {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+      .two-cols {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .whatsapp-floating .whatsapp-text-group {
+        display: none;
+      }
+      .whatsapp-floating {
+        padding: 5px;
+        border-radius: 50%;
+      }
+      .region-grid-2x2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON (BOTTOM-RIGHT & BIGGER) ==================== -->
+  <a
+    href="https://wa.me/919811543210?text=Hi%20Ritam%20Consultancy,%20I%20would%20like%20guidance%20for%20B.Tech%20Admissions."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-floating"
+    aria-label="Chat with Counselor on WhatsApp"
+  >
+    <div class="whatsapp-icon-circle">
+      <!-- WhatsApp Official SVG Icon (Enlarged) -->
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </div>
+    <div class="whatsapp-text-group">
+      <span class="whatsapp-title">
+        <span class="online-dot"></span> Counselors Active
+      </span>
+      <span class="whatsapp-sub">Chat on WhatsApp</span>
+    </div>
+  </a>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header id="main-header">
+    <div class="container nav-wrap">
+      <!-- Brand Logo (Enlarged to 64px) -->
+      <a href="#" aria-label="Ritam Consultancy Home">
+        <img src="public/assets/images/logo/ritam-logo.png" alt="Ritam Consultancy" class="logo-img" />
+      </a>
+
+      <!-- Center Capsule Menu -->
+      <nav class="capsule-menu">
+        <a href="#" class="capsule-item active">Home</a>
+        <a href="#explore-colleges-section" class="capsule-item">Explore Colleges</a>
+        <a href="#" class="capsule-item">Blogs</a>
+        <a href="#" class="capsule-item">Resources</a>
+        <a href="#why-choose-us" class="capsule-item">About Us</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="nav-actions">
+        <a href="#enquiry-form-section" class="cta-btn-nav">
+          <span>Enquire Now</span>
+          <span style="font-weight: 800; font-size: 16px;">›</span>
+        </a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="container mobile-menu" id="mobile-drawer">
+      <a href="#" class="capsule-item active">Home</a>
+      <a href="#explore-colleges-section" class="capsule-item">Explore Colleges</a>
+      <a href="#" class="capsule-item">Blogs</a>
+      <a href="#" class="capsule-item">Resources</a>
+      <a href="#why-choose-us" class="capsule-item">About Us</a>
+    </div>
+  </header>
+
+  <!-- ==================== 01. HERO SECTION (WITH EXACT BACKGROUND SHAPES FROM IMAGE) ==================== -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <!-- Left Content -->
+      <div class="reveal active">
+        <div class="pill-badge">
+          <span>🎓</span>
+          <span>B.Tech Admissions | All Over India</span>
+        </div>
+
+        <h1 class="hero-title">
+          Your Future Deserves<br />
+          <span class="dribbble-curl">
+            <span class="highlight-orange">the Right College.</span>
+            <!-- Dribbble Style Hand-drawn Underline Curve SVG -->
+            <svg viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9C60 3 180 3 257 9" stroke="#F96815" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+
+        <p class="hero-sub">
+          Get expert guidance, compare top engineering colleges, and choose the right B.Tech college across India — based on your budget, preferences, and career goals.
+        </p>
+
+        <!-- 4 Bullet Badges Grid -->
+        <div class="bullet-badges-grid">
+          <div class="bullet-item hover-lift">
+            <div class="check-circle">✓</div>
+            <span>Verified Colleges</span>
+          </div>
+          <div class="bullet-item hover-lift">
+            <div class="check-circle">✓</div>
+            <span>Personalized Counseling</span>
+          </div>
+          <div class="bullet-item hover-lift">
+            <div class="check-circle">✓</div>
+            <span>Placement Insights</span>
+          </div>
+          <div class="bullet-item hover-lift">
+            <div class="check-circle">✓</div>
+            <span>End-to-End Admission Support</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hero-cta-group">
+          <a href="#enquiry-form-section" class="btn-primary">
+            <span>Get College Recommendations</span>
+            <span>➔</span>
+          </a>
+          <a href="#guidance-section" class="btn-outline">
+            Talk to an Expert
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Student Visual with Exact Background Shapes From Uploaded Image -->
+      <div class="hero-visual reveal active delay-1">
+        <!-- SVG Reproducing the exact organic backdrop shapes from user's image -->
+        <svg class="shapes-backdrop-svg" viewBox="0 0 520 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 1. Dark Forest Green Arch behind the boy's head (#135B4E) -->
+          <path d="M125 75C125 30 195 20 255 35C315 50 325 145 315 215C305 275 215 305 165 275C125 245 125 125 125 75Z" fill="#135B4E"/>
+          
+          <!-- 2. Vibrant Orange Angled Wedge extending left (#F96815) -->
+          <path d="M35 165C15 195 40 235 85 225L265 155C300 140 315 180 295 215L195 320C160 355 100 340 70 300L35 165Z" fill="#F96815"/>
+          
+          <!-- 3. Muted Sage Green Shape on the Right behind the card (#CBD5C9) -->
+          <path d="M295 80C365 45 455 65 480 125C505 185 485 265 425 275C365 285 305 225 285 165C270 120 265 90 295 80Z" fill="#CBD5C9"/>
+          
+          <!-- 4. Soft Warm Sand/Peach Shape on the Far Right (#F7E6D7) -->
+          <path d="M435 135C490 115 525 160 530 235C535 310 490 385 445 395C405 405 395 345 400 275C405 205 395 150 435 135Z" fill="#F7E6D7"/>
+        </svg>
+
+        <!-- Top-Right Floating Trophy Card Matching Image Exactly -->
+        <div class="floating-hero-badge">
+          <div class="trophy-icon-box">🏆</div>
+          <div class="badge-content-text">
+            <span class="badge-heading">B.Tech Admissions</span>
+            <span class="badge-subtext">Across India</span>
+          </div>
+        </div>
+
+        <!-- Floating Stat Rating Badge Bottom -->
+        <div class="floating-stat-tag">
+          <span style="color: #F59E0B; font-size: 16px;">⭐</span>
+          <div>
+            <strong style="display:block; font-size:11px; color:#111827; line-height:1.2;">4.9/5 Rating</strong>
+            <span style="font-size:10px; color:#059669; font-weight:700;">1,200+ Students Guided</span>
+          </div>
+        </div>
+
+        <img src="public/assets/images/hero/hero-students.png" alt="Ritam Consultancy Engineering Students" class="students-photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 02. WHY CHOOSE US (NOTICABLY STRONGER MINT TINT #EBF4F0) ==================== -->
+  <section id="why-choose-us" class="why-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="pill-badge">
+          <span>🌿</span>
+          <span>Why Choose Ritam Consultancy?</span>
+        </div>
+        <h2 class="section-title">
+          Trusted Guidance for Your <span class="highlight-orange">B.Tech Admission</span>
+        </h2>
+        <p class="section-sub">
+          We simplify your college selection with the right information, personalized support, and a transparent process.
+        </p>
+      </div>
+
+      <!-- 4 Feature Cards -->
+      <div class="cards-grid-4">
+        <div class="feature-card hover-lift reveal delay-1">
+          <div class="card-icon-box bg-teal">🎓</div>
+          <h3 class="card-title">Personalized College Recommendations</h3>
+          <p class="card-desc">Colleges that match your budget, rank, and career goals.</p>
+        </div>
+
+        <div class="feature-card hover-lift reveal delay-2">
+          <div class="card-icon-box bg-peach">₹</div>
+          <h3 class="card-title">Clear & Transparent Information</h3>
+          <p class="card-desc">Get accurate details on fees, admissions, placements, and more.</p>
+        </div>
+
+        <div class="feature-card hover-lift reveal delay-3">
+          <div class="card-icon-box bg-mint">🎧</div>
+          <h3 class="card-title">End-to-End Admission Support</h3>
+          <p class="card-desc">Guidance from college selection to admission completion.</p>
+        </div>
+
+        <div class="feature-card hover-lift reveal delay-3">
+          <div class="card-icon-box bg-orange">👥</div>
+          <h3 class="card-title">Support for Students & Parents</h3>
+          <p class="card-desc">Reliable guidance with a student-first approach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 03. EXPLORE COLLEGES (CLEAN PURE WHITE) ==================== -->
+  <section id="explore-colleges-section" class="explore-section">
+    <div class="container explore-grid">
+      <!-- Left info -->
+      <div class="explore-left reveal">
+        <div class="pill-badge">
+          <span>📍</span>
+          <span>Explore by Location</span>
+        </div>
+        <h2 class="section-title">
+          Explore B. Tech Colleges<br />
+          <span class="highlight-orange">Across India</span>
+        </h2>
+        <p class="section-sub">
+          Discover top engineering colleges by region with curated information on courses, fees, placements, and admission process.
+        </p>
+        <a href="#enquiry-form-section" class="btn-primary" style="padding: 13px 26px; font-size: 14px;">
+          <span>Explore All Locations</span>
+          <span>➔</span>
+        </a>
+
+        <!-- Campus Architectural Sketch -->
+        <div class="campus-sketch">
+          <svg width="240" height="75" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M120 10L135 25H105L120 10Z" stroke="#94A3B8" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M100 25C100 20 140 20 140 25V35H100V25Z" stroke="#94A3B8" stroke-width="1.6"/>
+            <path d="M60 35H180V42H60V35Z" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="75" y1="42" x2="75" y2="70" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="95" y1="42" x2="95" y2="70" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="115" y1="42" x2="115" y2="70" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="125" y1="42" x2="125" y2="70" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="145" y1="42" x2="145" y2="70" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="165" y1="42" x2="165" y2="70" stroke="#94A3B8" stroke-width="1.6"/>
+            <rect x="40" y="70" width="160" height="6" stroke="#94A3B8" stroke-width="1.6"/>
+            <line x1="30" y1="76" x2="210" y2="76" stroke="#94A3B8" stroke-width="1.6"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right 5 Region Cards -->
+      <div class="region-cards-wrap reveal delay-1">
+        <!-- Top Wide Card: AP & Telangana -->
+        <a href="#enquiry-form-section" class="region-card-wide">
+          <div class="wide-img-wrap">
+            <img src="public/assets/images/regions/AP.png" alt="Andhra Pradesh & Telangana Colleges" class="region-img" />
+          </div>
+          <div class="region-info">
+            <div class="region-text-group">
+              <span class="region-name">Andhra Pradesh & Telangana</span>
+              <span class="region-subtag">Hyderabad • Vijayawada • Visakhapatnam • 45+ Colleges</span>
+            </div>
+            <div class="region-arrow">➔</div>
+          </div>
+        </a>
+
+        <!-- 2x2 Grid -->
+        <div class="region-grid-2x2">
+          <!-- Karnataka -->
+          <a href="#enquiry-form-section" class="region-card">
+            <div class="thumb-wrap">
+              <img src="public/assets/images/regions/Karnataka.png" alt="Karnataka & Bengaluru Colleges" class="region-img" />
+            </div>
+            <div class="region-info">
+              <div class="region-text-group">
+                <span class="region-name">Karnataka / Bengaluru</span>
+                <span class="region-subtag">Top Tech Hubs • 40+ Colleges</span>
+              </div>
+              <div class="region-arrow">➔</div>
+            </div>
+          </a>
+
+          <!-- Tamil Nadu -->
+          <a href="#enquiry-form-section" class="region-card">
+            <div class="thumb-wrap">
+              <img src="public/assets/images/regions/Tamil Nadu.png" alt="Tamil Nadu Colleges" class="region-img" />
+            </div>
+            <div class="region-info">
+              <div class="region-text-group">
+                <span class="region-name">Tamil Nadu</span>
+                <span class="region-subtag">Chennai • Coimbatore • 50+ Colleges</span>
+              </div>
+              <div class="region-arrow">➔</div>
+            </div>
+          </a>
+
+          <!-- Kerala -->
+          <a href="#enquiry-form-section" class="region-card">
+            <div class="thumb-wrap">
+              <img src="public/assets/images/regions/Kerala.png" alt="Kerala Colleges" class="region-img" />
+            </div>
+            <div class="region-info">
+              <div class="region-text-group">
+                <span class="region-name">Kerala</span>
+                <span class="region-subtag">Kochi • Trivandrum • 25+ Colleges</span>
+              </div>
+              <div class="region-arrow">➔</div>
+            </div>
+          </a>
+
+          <!-- North India -->
+          <a href="#enquiry-form-section" class="region-card">
+            <div class="thumb-wrap">
+              <img src="public/assets/images/regions/Golden Sunset at India Gate.png" alt="North India Colleges" class="region-img" />
+            </div>
+            <div class="region-info">
+              <div class="region-text-group">
+                <span class="region-name">North India</span>
+                <span class="region-subtag">Delhi NCR • Punjab • 35+ Colleges</span>
+              </div>
+              <div class="region-arrow">➔</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 04. ZERO COMMISSION (NOTICABLY STRONGER WARM TINT #FAF0E6) ==================== -->
+  <section class="zero-comm-section">
+    <div class="container zero-comm-grid">
+      <!-- 3D Shield -->
+      <div class="reveal">
+        <img src="public/assets/images/trust/zero-commission-shield.png" alt="0% Commission Guarantee" class="shield-img" />
+      </div>
+
+      <!-- Copy -->
+      <div class="reveal delay-1">
+        <div class="pill-badge">
+          <span>🌿</span>
+          <span>Our Commitment</span>
+        </div>
+        <h2 class="section-title" style="margin: 16px 0;">
+          Zero Commission, <span class="highlight-orange">Always</span>
+        </h2>
+        <p class="section-sub" style="margin-bottom: 24px;">
+          We do not charge any commission or hidden fees from students or parents for our guidance and admission support.
+        </p>
+
+        <div class="trust-badges-row">
+          <div class="trust-pill hover-lift">
+            <span>🎁</span>
+            <span>Completely Free Guidance</span>
+          </div>
+          <div class="trust-pill hover-lift">
+            <span>🛡️</span>
+            <span>Transparent Process</span>
+          </div>
+          <div class="trust-pill hover-lift">
+            <span>🤝</span>
+            <span>Student & Parent First</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 05. GUIDANCE PROCESS (CLEAN PURE WHITE) ==================== -->
+  <section id="guidance-section" class="guidance-section">
+    <div class="container guidance-grid">
+      <!-- Left Photo & Badges -->
+      <div class="reveal">
+        <div class="pill-badge">
+          <span>👥</span>
+          <span>Guidance for Parents & Students</span>
+        </div>
+        <h2 class="section-title" style="margin: 16px 0;">
+          Because Your Future <span class="highlight-orange">Matters to Us</span>
+        </h2>
+        <p class="section-sub" style="margin-bottom: 20px;">
+          We understand that choosing the right college is a big decision. Ritam provides trusted guidance and support for both students and parents at every step.
+        </p>
+
+        <!-- Counselor Photo Card -->
+        <div class="guidance-photo-card">
+          <img src="public/assets/images/guidance/counseling-session.png" alt="Counselor guiding student and parents" class="guidance-photo" />
+          <div class="photo-tags">
+            <div class="photo-tag">
+              <span>🎓</span>
+              <span>Trusted Guidance for Students</span>
+            </div>
+            <div class="photo-tag">
+              <span>👥</span>
+              <span>Support for Parents</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 4-Step Timeline with Track Line -->
+      <div class="reveal delay-1">
+        <div class="steps-timeline">
+          <!-- Step 1 -->
+          <div class="timeline-step">
+            <div class="step-badge">01</div>
+            <div class="step-card">
+              <div class="step-header">
+                <span>📋</span>
+                <h4 class="step-title">Share Your Details</h4>
+              </div>
+              <p class="step-desc">Tell us about your academic background, preferred courses, location and budget.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step">
+            <div class="step-badge">02</div>
+            <div class="step-card">
+              <div class="step-header">
+                <span>🎓</span>
+                <h4 class="step-title">Get College Suggestions</h4>
+              </div>
+              <p class="step-desc">We analyze your profile and suggest the best colleges that match your preferences.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step">
+            <div class="step-badge">03</div>
+            <div class="step-card">
+              <div class="step-header">
+                <span>📊</span>
+                <h4 class="step-title">Compare & Shortlist</h4>
+              </div>
+              <p class="step-desc">Review fees, courses, placements, facilities, and other important factors side by side.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="step-badge">04</div>
+            <div class="step-card">
+              <div class="step-header">
+                <span>🤝</span>
+                <h4 class="step-title">Get Admission Support</h4>
+              </div>
+              <p class="step-desc">We help you with the application process, documentation, and next steps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="guidance-cta">
+          <a href="#enquiry-form-section" class="btn-primary" style="padding: 13px 26px; font-size: 14px;">
+            <span>Talk to Our Counsellor</span>
+            <span>➔</span>
+          </a>
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">
+            Get personalized guidance for a better tomorrow.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 06. ENQUIRY FORM SECTION (NOTICABLY STRONGER SAGE GRADIENT) ==================== -->
+  <section id="enquiry-form-section" class="enquiry-section">
+    <div class="container enquiry-grid">
+      <!-- Left: The Single Enquiry Form -->
+      <div class="form-card hover-lift reveal">
+        <div class="form-header-wrap">
+          <div class="form-icon-pill">📋</div>
+          <div>
+            <h3 class="form-card-title">Request College Recommendations</h3>
+            <p class="form-card-sub">Fill in your details and our team will get in touch with the best B.Tech college options.</p>
+          </div>
+        </div>
+
+        <!-- Success Banner -->
+        <div class="success-alert" id="form-success-banner">
+          <span style="font-size: 20px;">✓</span>
+          <div>
+            <strong>Thank you! Your enquiry has been submitted.</strong>
+            <div>Our senior counselor will contact you shortly.</div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="enquiry-form" id="enquiry-form" onsubmit="handleFormSubmit(event)">
+          <!-- Student Name -->
+          <div class="form-group">
+            <label class="form-label">Student Name (Full Name) *</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" id="studentName" class="form-input" placeholder="Enter student's full name" required />
+            </div>
+            <span class="error-msg" id="err-studentName">Please enter student's full name</span>
+          </div>
+
+          <!-- Two Column Phones -->
+          <div class="two-cols">
+            <div class="form-group">
+              <label class="form-label">Parent's Phone Number *</label>
+              <div class="input-wrap">
+                <span class="input-icon">📞</span>
+                <input type="tel" id="parentPhone" class="form-input" placeholder="Enter parent's number" required />
+              </div>
+              <span class="error-msg" id="err-parentPhone">Enter a valid 10-digit number</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Student's Phone Number *</label>
+              <div class="input-wrap">
+                <span class="input-icon">📱</span>
+                <input type="tel" id="studentPhone" class="form-input" placeholder="Enter student's number" required />
+              </div>
+              <span class="error-msg" id="err-studentPhone">Enter a valid 10-digit number</span>
+            </div>
+          </div>
+
+          <!-- Preferred State -->
+          <div class="form-group">
+            <label class="form-label">Preferred State for B.Tech *</label>
+            <div class="input-wrap">
+              <span class="input-icon">📍</span>
+              <select id="preferredState" class="form-input" required>
+                <option value="">Select a state</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Delhi NCR">Delhi NCR</option>
+                <option value="Other States">Other States</option>
+              </select>
+            </div>
+            <span class="error-msg" id="err-preferredState">Please select a state</span>
+          </div>
+
+          <!-- Budget -->
+          <div class="form-group">
+            <label class="form-label">Your Budget (Annual Tuition Fee) *</label>
+            <div class="input-wrap">
+              <span class="input-icon">₹</span>
+              <select id="budget" class="form-input" required>
+                <option value="">Select your budget range</option>
+                <option value="Below ₹1.5 Lakhs">Below ₹1.5 Lakhs / year</option>
+                <option value="₹1.5 Lakhs - ₹3 Lakhs">₹1.5 Lakhs - ₹3 Lakhs / year</option>
+                <option value="₹3 Lakhs - ₹5 Lakhs">₹3 Lakhs - ₹5 Lakhs / year</option>
+                <option value="Above ₹5 Lakhs">Above ₹5 Lakhs / year</option>
+              </select>
+            </div>
+            <span class="error-msg" id="err-budget">Please select budget range</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit" id="submit-btn">
+            <span id="btn-text">Get College Suggestions</span>
+            <span>➔</span>
+          </button>
+
+          <!-- Privacy Note -->
+          <div class="privacy-notice">
+            <span>🔒</span>
+            <span>Your information is safe and will only be used for college guidance.</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column Value Proposition -->
+      <div class="reveal delay-1">
+        <div class="pill-badge">
+          <span>🌿</span>
+          <span>Get Expert Guidance</span>
+        </div>
+        <h2 class="section-title" style="margin: 16px 0;">
+          Find the Right B.Tech College
+        </h2>
+        <p class="section-sub" style="margin-bottom: 24px;">
+          Tell us your preferences, and our counselling team will suggest the best engineering colleges for you and your family based on your budget and preferred location.
+        </p>
+
+        <div class="benefit-item">
+          <div class="check-circle">✓</div>
+          <span>100% Free & Transparent Guidance (Zero Hidden Charges)</span>
+        </div>
+        <div class="benefit-item">
+          <div class="check-circle">✓</div>
+          <span>Direct Cutoff Analysis & NIRF Ranking Insights</span>
+        </div>
+        <div class="benefit-item">
+          <div class="check-circle">✓</div>
+          <span>Verified Fees, Scholarships & Placement Stats</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 07. FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" aria-label="Ritam Consultancy Home">
+            <img src="public/assets/images/logo/ritam-logo.png" alt="Ritam Consultancy" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline">
+            Trusted guidance for B.Tech admissions across India.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <a href="tel:+919811543210" class="contact-link">
+            <span>📞</span>
+            <span>+91 98115 43210</span>
+          </a>
+          <a href="mailto:support@ritamconsultancy.com" class="contact-link">
+            <span>✉️</span>
+            <span>support@ritamconsultancy.com</span>
+          </a>
+          <div class="contact-link">
+            <span>📍</span>
+            <span>Hyderabad, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Ritam Consultancy. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#enquiry-form-section">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CLIENT INTERACTION SCRIPT ==================== -->
+  <script>
+    // Header Scroll Shadow
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    hamburger.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+      hamburger.textContent = drawer.classList.contains('open') ? '✕' : '☰';
+    });
+
+    // Smooth Scroll Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Form Handling & Validation
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('studentName').value.trim();
+      const parent = document.getElementById('parentPhone').value.trim();
+      const student = document.getElementById('studentPhone').value.trim();
+      const state = document.getElementById('preferredState').value;
+      const budget = document.getElementById('budget').value;
+
+      const phoneRegex = /^[6-9]\d{9}$/;
+      let hasError = false;
+
+      // Validate Name
+      if (!name) {
+        document.getElementById('err-studentName').classList.add('visible');
+        document.getElementById('studentName').classList.add('error');
+        hasError = true;
+      } else {
+        document.getElementById('err-studentName').classList.remove('visible');
+        document.getElementById('studentName').classList.remove('error');
+      }
+
+      // Validate Parent Phone
+      if (!phoneRegex.test(parent.replace(/\D/g, ''))) {
+        document.getElementById('err-parentPhone').classList.add('visible');
+        document.getElementById('parentPhone').classList.add('error');
+        hasError = true;
+      } else {
+        document.getElementById('err-parentPhone').classList.remove('visible');
+        document.getElementById('parentPhone').classList.remove('error');
+      }
+
+      // Validate Student Phone
+      if (!phoneRegex.test(student.replace(/\D/g, ''))) {
+        document.getElementById('err-studentPhone').classList.add('visible');
+        document.getElementById('studentPhone').classList.add('error');
+        hasError = true;
+      } else {
+        document.getElementById('err-studentPhone').classList.remove('visible');
+        document.getElementById('studentPhone').classList.remove('error');
+      }
+
+      if (!state) {
+        document.getElementById('err-preferredState').classList.add('visible');
+        document.getElementById('preferredState').classList.add('error');
+        hasError = true;
+      } else {
+        document.getElementById('err-preferredState').classList.remove('visible');
+        document.getElementById('preferredState').classList.remove('error');
+      }
+
+      if (!budget) {
+        document.getElementById('err-budget').classList.add('visible');
+        document.getElementById('budget').classList.add('error');
+        hasError = true;
+      } else {
+        document.getElementById('err-budget').classList.remove('visible');
+        document.getElementById('budget').classList.remove('error');
+      }
+
+      if (hasError) return;
+
+      // Submit Animation
+      const btn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      btn.disabled = true;
+      btnText.textContent = 'Submitting...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btnText.textContent = 'Get College Suggestions';
+        document.getElementById('form-success-banner').classList.add('show');
+        document.getElementById('enquiry-form').reset();
+
+        setTimeout(() => {
+          document.getElementById('form-success-banner').classList.remove('show');
+        }, 8000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
